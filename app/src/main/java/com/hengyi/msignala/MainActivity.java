@@ -9,8 +9,11 @@ import com.hengyi.msignala.singala.Connection;
 import com.hengyi.msignala.singala.Transport.StateBase;
 
 public class MainActivity extends AppCompatActivity {
-    private String address = "http://192.168.1.33/HY-ERPService";
-    private String subAddress = "/ERPDataModifyPush";
+//    private String address = "http://192.168.1.33/HY-ERPService";
+//    private String address = "http://192.168.1.33:3333";
+//    private String subAddress = "/ERPDataModifyPush";
+    private String address = "http://14.29.87.54:4321/";
+    private String subAddress = "ERPDataModifyPush";
     private static final String TAG = "JavaWebSocket";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 链接测试
+     * 连接测试
      */
     private void connection() {
         Connection conn = new Connection(address + subAddress , this ,new LongPollingTransport()){
@@ -29,13 +32,11 @@ public class MainActivity extends AppCompatActivity {
                 super.OnError(exception);
                 Log.d(TAG ,"OnError==" +  exception.getMessage());
             }
-
             @Override
             public void OnMessage(String message) {
                 super.OnMessage(message);
                 Log.d(TAG ,"OnMessage==" + message);
             }
-
             @Override
             public void OnStateChanged(StateBase oldState, StateBase newState) {
                 super.OnStateChanged(oldState, newState);

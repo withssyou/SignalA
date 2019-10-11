@@ -42,15 +42,13 @@ public abstract class ConnectionBase {
             oldState = mCurrentState;
     		mCurrentState = state;
     		
-    		if(state.getState() == ConnectionState.Disconnected)
-    		{
+    		if(state.getState() == ConnectionState.Disconnected) {
     			setConnectionId(null);
     			setConnectionToken(null);
     		}
 		}
 
         state.Run();
-
         // Fire event
     	OnStateChanged(oldState, state);
     }
@@ -122,7 +120,7 @@ public abstract class ConnectionBase {
 		mGroupsToken = groupsToken;
 	}
 	
-	public void setMessage(JSONObject response) 
+	public void setMessage(JSONObject response)
 	{
 		OnMessage(response.toString());
 	}

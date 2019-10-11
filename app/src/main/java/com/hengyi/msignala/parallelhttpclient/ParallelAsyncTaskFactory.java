@@ -1,6 +1,5 @@
 package com.hengyi.msignala.parallelhttpclient;
 
-import android.os.AsyncTask;
 
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.AsyncHttpClient;
@@ -8,10 +7,8 @@ import com.turbomanage.httpclient.AsyncRequestExecutor;
 import com.turbomanage.httpclient.AsyncRequestExecutorFactory;
 
 /**
- * Android-specific factory produces an {@link AsyncTask} that can 
- * execute an HTTP request in parallel with other AsyncTasks. 
- * 
- * @author Erik Zetterqvist
+ * AsyncTask工厂，用于并发执行http请求
+ *
  */
 public class ParallelAsyncTaskFactory implements AsyncRequestExecutorFactory {
 

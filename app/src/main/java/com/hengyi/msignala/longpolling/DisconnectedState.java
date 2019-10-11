@@ -26,8 +26,7 @@ public class DisconnectedState extends StateBase {
 	}
 
 	@Override
-	public void Stop() {
-	}
+	public void Stop() { }
 
 	@Override
 	public void Send(CharSequence text, SendCallback callback) {
@@ -36,8 +35,7 @@ public class DisconnectedState extends StateBase {
 
 	@Override
 	protected void OnRun() {
-		if(requestStart.get())
-		{
+		if(requestStart.get()) {
 	        NegotiatingState s = new NegotiatingState(mConnection);
 	        mConnection.SetNewState(s);
 		}

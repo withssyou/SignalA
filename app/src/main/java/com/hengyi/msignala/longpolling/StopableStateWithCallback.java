@@ -1,6 +1,5 @@
 package com.hengyi.msignala.longpolling;
 
-
 import com.hengyi.msignala.singala.ConnectionBase;
 
 public abstract class StopableStateWithCallback extends StopableState {
