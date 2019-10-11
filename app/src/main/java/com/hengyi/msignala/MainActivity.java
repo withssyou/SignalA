@@ -1,48 +1,31 @@
 package com.hengyi.msignala;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.hengyi.msignala.longpolling.LongPollingTransport;
-import com.hengyi.msignala.singala.Connection;
-import com.hengyi.msignala.singala.Transport.StateBase;
-
 public class MainActivity extends AppCompatActivity {
-//    private String address = "http://192.168.1.33/HY-ERPService";
-//    private String address = "http://192.168.1.33:3333";
-//    private String subAddress = "/ERPDataModifyPush";
-    private String address = "http://14.29.87.54:4321/";
-    private String subAddress = "ERPDataModifyPush";
-    private static final String TAG = "JavaWebSocket";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        connection();
+        OrderBroadCastReceiver receiver = new OrderBroadCastReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Constance.MESSAGE_ORDER);
+        registerReceiver(receiver , filter);
+
+    }
+    class OrderBroadCastReceiver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String str = intent.getStringExtra("content");
+            Log.d("TAG" , str);
+        }
     }
 
-    /**
-     * 连接测试
-     */
-    private void connection() {
-        Connection conn = new Connection(address + subAddress , this ,new LongPollingTransport()){
-            @Override
-            public void OnError(Exception exception) {
-                super.OnError(exception);
-                Log.d(TAG ,"OnError==" +  exception.getMessage());
-            }
-            @Override
-            public void OnMessage(String message) {
-                super.OnMessage(message);
-                Log.d(TAG ,"OnMessage==" + message);
-            }
-            @Override
-            public void OnStateChanged(StateBase oldState, StateBase newState) {
-                super.OnStateChanged(oldState, newState);
-                Log.d(TAG , "OnStateChanged==" + oldState.getIsRunning() + oldState.getState() + "----" + newState.getIsRunning() + newState.getState());
-            }
-        };
-        conn.Start();
-    }
 }

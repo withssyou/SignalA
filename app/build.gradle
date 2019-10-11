@@ -27,4 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation files('libs/android-query-full.0.24.2-beta.jar')
     implementation files('libs/basic-http-client-android-0.88.jar')
+
+    //json解析
+    implementation 'com.alibaba:fastjson:1.2.13'
 }
