@@ -1,4 +1,4 @@
-package com.hengyi.msignala.singala.Transport;
+package com.hengyi.msignala.singala.transport;
 
 public class ProcessResult {
 	public boolean timedOut = false;

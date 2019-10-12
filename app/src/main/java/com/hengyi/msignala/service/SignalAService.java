@@ -10,7 +10,8 @@ import com.hengyi.msignala.Constance;
 import com.hengyi.msignala.bean.ContentInfo;
 import com.hengyi.msignala.longpolling.LongPollingTransport;
 import com.hengyi.msignala.singala.Connection;
-import com.hengyi.msignala.singala.Transport.StateBase;
+import com.hengyi.msignala.singala.hubs.HubConnection;
+import com.hengyi.msignala.singala.transport.StateBase;
 import com.hengyi.msignala.utils.FastJsonUtils;
 
 public class SignalAService extends Service {
@@ -53,6 +54,8 @@ public class SignalAService extends Service {
                 switch (info.getDataModify()){
                     case "order":
                         intent = new Intent(Constance.MESSAGE_ORDER);
+                        break;
+                    case "":
                         break;
                 }
                 intent.putExtra("content" , FastJsonUtils.toJSON(info.getContent()));

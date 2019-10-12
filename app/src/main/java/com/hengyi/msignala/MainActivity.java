@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         OrderBroadCastReceiver receiver = new OrderBroadCastReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Constance.MESSAGE_ORDER);

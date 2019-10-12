@@ -3,7 +3,7 @@ package com.hengyi.msignala.longpolling;
 import com.hengyi.msignala.singala.ConnectionBase;
 import com.hengyi.msignala.singala.ConnectionState;
 import com.hengyi.msignala.singala.SendCallback;
-import com.hengyi.msignala.singala.Transport.StateBase;
+import com.hengyi.msignala.singala.transport.StateBase;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

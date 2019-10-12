@@ -2,8 +2,8 @@ package com.hengyi.msignala.singala;
 
 import android.content.Context;
 
-import com.hengyi.msignala.singala.Transport.ITransport;
-import com.hengyi.msignala.singala.Transport.StateBase;
+import com.hengyi.msignala.singala.transport.ITransport;
+import com.hengyi.msignala.singala.transport.StateBase;
 
 
 public class Connection extends ConnectionBase {

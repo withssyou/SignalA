@@ -1,4 +1,4 @@
-package com.hengyi.msignala.singala.Transport;
+package com.hengyi.msignala.singala.transport;
 
 import com.hengyi.msignala.singala.ConnectionBase;
 

@@ -5,8 +5,8 @@ import com.hengyi.msignala.singala.ConnectionBase;
 import com.hengyi.msignala.singala.ConnectionState;
 import com.hengyi.msignala.singala.SendCallback;
 import com.hengyi.msignala.singala.SignalAUtils;
-import com.hengyi.msignala.singala.Transport.ProcessResult;
-import com.hengyi.msignala.singala.Transport.TransportHelper;
+import com.hengyi.msignala.singala.transport.ProcessResult;
+import com.hengyi.msignala.singala.transport.TransportHelper;
 import com.turbomanage.httpclient.AsyncCallback;
 import com.turbomanage.httpclient.HttpResponse;
 

@@ -3,8 +3,8 @@ package com.hengyi.msignala.singala;
 import org.json.JSONObject;
 import android.content.Context;
 
-import com.hengyi.msignala.singala.Transport.ITransport;
-import com.hengyi.msignala.singala.Transport.StateBase;
+import com.hengyi.msignala.singala.transport.ITransport;
+import com.hengyi.msignala.singala.transport.StateBase;
 import java.util.Map;
 import java.util.TreeMap;
 
